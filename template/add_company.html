@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title> SES Project </title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+       <!-- ============= Home Section =============== -->
+
+       <section class="home-section">
+        <div class="home-content">
+            <span class="text">Create New Job</span>
+        </div> <br> <br>
+
+        <div class="bodyInfo">
+            <div class="info">
+                <div class="title">Add Company</div>
+                <form id="addCompanyForm" action="{{ url_for('add_company') }}" method="post" autocomplete="off" enctype="multipart/form-data">
+                    <div class="inputBox">
+                        <span class="details">Company Name</span>
+                        <input type="text" name="COMPANY_NAME" required>
+                    </div>
+                    <div class="inputBox">
+                        <span class="details">Address</span>
+                        <input type="text" name="COMPANY_ADDRESS" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <span class="details">Phone Number</span>
+                        <input type="number" name="COMPANY_PHONE" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <span class="details">Job Vacancy</span>
+                        <input type="number" name="JOB_POSITION" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <span class="details">E-mail</span>
+                        <input type="text" name="COMPANY_EMAIL" required>
+                    </div>
+
+
+                    <div class="inputBox">
+                        <span class="details">LINK</span>
+                        <input type="text" name="LINK" required>
+                    </div>
+
+                    <div class="index-btn-wrapper">
+                        <button class="index-btn" type="submit" name="add" style="background: #1f78bb;">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div> <br>
+
+        <style>
+           /* Google Fonts Import Link */
+           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            }
+
+            .home-section {
+                position: relative;
+                transition: all 0.5s ease;
+                padding: 12px;
+                background-color: #ccc;
+            }
+
+            .home-section .home-content .text {
+                color: #fff;
+                font-size: 35px;
+            }
+
+            .home-section .home-content .text {
+                font-size: 26px;
+                font-weight: 600;
+            }
+
+
+            .bodyInfo {
+                display: flex;
+                justify-content: center;
+                padding-left: 80px;
+            }
+
+            .info {
+                margin-bottom: 10px;
+                max-width: 900px;
+                width: 100%;
+                background: rgb(255, 255, 255);
+                padding: 25px 35px;
+                border-radius: 5px;
+                box-shadow: 0px 5px 10px 0px rgb(116, 114, 114);
+            }
+
+            .info .title {
+                font-size: 25px;
+                font-weight: 500;
+                position: relative;
+            }
+
+            .info .title::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 3px;
+                width: 30px;
+                background: linear-gradient(170deg, #000000, #575fcc);
+            }
+
+            .info form {
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: 20px 0 12px 0;
+            }
+
+            form .inputBox {
+                display: block;
+                margin-bottom: 20px;
+            }
+
+            .inputBox .details {
+                display: block;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+
+            .inputBox input {
+                height: 45px;
+                width: 100%;
+                outline: none;
+                border-radius: 5px;
+                border: 1px solid rgb(143, 141, 141);
+                background: rgb(214, 209, 209);
+                padding-left: 15px;
+                font-size: 16px;
+                font-family: "Poppins", sans-serif;
+            }
+
+            .inputBox ::placeholder {
+                color: #000;
+            }
+
+            .inputBox input:focus,
+            .inputBox input:valid {
+                border-color: #575fcc;
+            }
+
+            .inputBox textarea {
+                width: 22cm;
+                padding: 12px 20px;
+                box-sizing: border-box;
+                border: 1px solid rgb(182, 181, 181);
+                border-radius: 4px;
+                background-color: rgb(214, 209, 209);
+                font-size: 16px;
+                font-family: "Poppins", sans-serif;
+            }
+
+            .radioBox .details {
+                display: block;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+
+            .selectBox {
+                font-weight: 500;
+            }
+
+            .selectBox select {
+                width: 22cm;
+                padding: 12px 20px;
+                box-sizing: border-box;
+                border: 1px solid rgb(182, 181, 181);
+                border-radius: 4px;
+                background-color: rgb(214, 209, 209);
+                font-size: 16px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+            }
+
+            .inputBox {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+
+            .index-btn-wrapper {
+                float: right;
+            }
+
+
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .index-btn {
+                margin: 20px 10px 0 0;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 12px;
+                background: #2E94E3;
+                color: #fff;
+                border: none;
+                width: 200px;
+                height: 40px;
+                font-size: 15px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .index-btn1 {
+                margin: 20px 10px 0 0;
+                text-align: center;
+                line-height: 40px;
+                border-radius: 12px;
+                background: #2E94E3;
+                color: #fff;
+                border: none;
+                width: 150px;
+                height: 40px;
+                font-size: 15px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .index-btn:hover {
+                opacity: 0.8;
+                background: #2E94E3;
+            }
+
+            @media (max-width:1000px) {
+
+                .bodyInfo {
+                    padding-right: 1cm;
+                }
+
+                form .inputBox {
+                    margin-bottom: 15px;
+                    width: 100%;
+                }
+
+                .inputBox textarea {
+                    width: 100%;
+                }
+
+                .info form {
+                    max-height: 70cm;
+
+                }
+
+                form .inputBox .select-box {
+                    margin-bottom: 15px;
+                    width: 100%;
+                }
+
+                ::placeholder {
+                    font-family: "Poppins", sans-serif;
+                }
+
+                form .inputBox .text {
+                    font-family: "Poppins", sans-serif;
+                }
+            }
+
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-track {
+                border-radius: 5px;
+                box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+            }
+
+            ::-webkit-scrollbar-thumb {
+                border-radius: 5px;
+                background-color: #5a5b5c;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #282929;
+            }
+        </style>
+    </section>
+
+</body>
+
+</html>
